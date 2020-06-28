@@ -1,0 +1,274 @@
+
+{% load static %}
+{% load  staticencoder %}
+{% include 'header.html' %}
+
+<video id="tec-background-video" height="20%" autoplay="autoplay"  loop="loop" autobuffer="autobuffer" muted="muted"
+>
+
+
+ <source  src="{% video_encode_static 'images/Play.mp4' %}" type="video/mp4" >
+</video>
+
+{% include 'nav.html' %}
+
+
+<section id="courses" class="section">
+    <div class="container">
+        <div class="section-header">
+            <br/>
+            <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Introduction of School</h2>
+            <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+             <div class="row">
+            <div class="col-md-6">
+          <p class="section-subtitle wow fadeIn"  data-wow-duration="1000ms" data-wow-delay="0.3s">
+              <b>
+                  <ul class="bold" style="color:black">
+            <br/><li class="feature-item"><i class="fa fa-hand-o-right pr-3 handicon"></i>
+Shere punjab public school is a Co- Education Secondary Private  School in the  Zirakpur, Distt -Mohali   Punjab, india. The School was founded in  2002 and is Recognised and Associated to Punjab School Education Board  Since 2012.
+            </li> <br/>
+                <br/>
+
+<li class="feature-item"><i class="fa fa-hand-o-right pr-3 handicon"></i>
+Shere punjab public school is a Co- Education Secondary Private  School in the  Zirakpur, Distt -Mohali   Punjab, india. The School was founded in  2002 and is Recognised and Associated to Punjab School Education Board  Since 2012.
+</li><br/>
+                <br/>
+                  <li class="feature-item"><i class="fa fa-hand-o-right pr-3 handicon"></i>
+Extra morning  class i.e for 1 hour are held for  weak student of every class .
+Extra coaching class also held for the student of Class  5th , 8th 9th and 10th during summer and winter break. Teachers are being paid extra  for these but not even a single penny charge from the students.
+                  </li></ul></b></p>
+            </div>
+                 <div class="col-md-1">
+                 </div>
+            <div class="col-md-4">
+                 <img src="{% image_encode_static 'images/LOGO-BIG.jpg' %}" >
+
+            </div>
+             </div>
+        </div>
+
+    </div>
+</section>
+<section id="features" class="section" data-stellar-background-ratio="0.2">
+    <div class="container">
+        <div class="feature-section">
+            <br/>
+            <h2 class="feature-section-title">PRINCIPAL MESSAGE</h2>
+            <hr class="fiture-lines">
+            <div class="row">
+                <div class="col-md-5">
+<ul class="feature-list">
+                        <li class="feature-item">
+                             <img src="{% image_encode_static 'images/team1.jpg' %}">
+                        </li>
+    </ul>
+                </div>
+                <div class="col-md-7">
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <p><b>"Educating the mind without educating the heart is no education at all" </br>Aristotle</b></p>
+
+
+
+                            <p>"Message"</p>
+I have the privilege to welcome you  all to this  great temple of learning. Shere Punjab public school provide the atmosphere for study and creativity.
+At SPPS, we pledge to make every effort to take the student on a voyage of self discovery and of learning
+
+The School maintains a tradition of inculcating human values in the minds of the pupil. We take pains for their physical mental ,social and intellectual developments
+
+The aim of school is to develop among its pupil all around abilities as individuals as well  as  team players by exposing them to diverse field of activities.
+<br/>
+                            <br/>
+<p><b>Sunpreet Singh
+    <br/>(B.tech, M.tech,
+    <br/>     B.Ed, LLB)
+<br/>Principal
+    <br/>Shere  punjab public school</b></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="awards" class="section">
+    <div class="container">
+        <br/>
+        <div class="section-header wow fadeInDown" data-wow-delay="1s">
+            <h2 class="section-title">Awards</h2>
+            <hr class="lines">
+
+        </div>
+        <div class="row">
+            <div id="portfolio" class="row">
+                {% for gallery_list in gallery_list %}
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print wow fadeInDown"
+                     data-wow-delay="1s">
+                    <div class="portfolio-item">
+                        <div class="shot-item">
+                            <img src="{% encode_dynmic_image  gallery_list.gallery_photo.path %}"
+                                 alt="School Topper Batch Wise"/>
+                            <a class="overlay lightbox" href="uploads/{{gallery_list.gallery_photo}}">
+                                <i class="fa fa-eye item-icon"></i>
+                            </a>
+                            <p> <b><span> <class="date"> {{gallery_list.alternate_text}}</span></b></p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="awarbtnmore">
+            <a href="/all-awards" class="awardsbtn ">View All Awards</a>
+                </div>
+        </div>
+    </div>
+</section>
+<section id="apply-visa">
+    <div class="container">
+    </div>
+</section>
+<section id="blog" class="section">
+    <!--blog section-->
+    <br/>
+    <div class="container mb-5">
+        <div class="section-header">
+            <h2 class="wow zoomIn section-title" data-wow-duration="1000ms" data-wow-delay="100ms">Management Team</h2>
+            <hr class="lines">
+            <p class="section-subtitle wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms"></p>
+        </div>
+        <div class="row">
+            {% for blog_list in blog_list %}
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 blog-item wow fadeInDown" data-wow-delay="1.2s">
+                <div class="blog-item-wrapper">
+                    <div class="blog-item-img">
+                        <a href="../blog/{{blog_list.slug}}"><img src="{% encode_dynmic_image  blog_list.image.path %}" alt="TEC blog" style="height:220px;"></a>
+                    </div>
+                    <div class="blog-item-text">
+                        <div class="meta-tags">
+                        </div>
+                        <h3>
+                            <a href="../blog/{{blog_list.slug}}">{{blog_list.title}}</a>
+                        </h3>
+                        <p>
+                            {{blog_list.details|safe|truncatechars:200}}
+                        </p>
+                        <a href="../blog/{{blog_list.slug}}" class="btn-rm">Read More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="view-all col-md-12">
+                <a href="../blogs" class="viewblogbtn2">View All</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section id="contact" class="section" data-stellar-background-ratio="-0.2">
+    <br/>
+    <div class="contact-form wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="100ms">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                    <div class="contact-us">
+                        <h3>Contact With Us</h3>
+                        <hr/>
+                        <div class="contact-address">
+                            <h5 class="heading5">Office Contact</h5>
+                            <p class="phone">Mobile Number: <span>+91 7009168574</span></p>
+                            <p class="email">Email Address: <span>SherePunjabPublicSchool@gmail.com</span></p>
+                            <hr/>
+                            <h5 class="heading5">Admission Query</h5>
+                            <p class="phone">Mobile Number: <span>+91 9872665924, +91 9463962299 </span></p>
+                            <p class="email">Email Address: <span>SherePunjabPublicSchool@gmail.com</span></p>
+                             <hr/>
+                            <h3>Business Hours</h3>
+                            <ul>
+                                <li><strong>Monday - Saturday : </strong>7:30 am to 2:00 pm(Summer)</li>
+                                <li><strong>Monday - Saturday : </strong>8:15 am to 2:15 pm(Winter)</li>
+                                <li><strong>Sunday : </strong>Closed</li>
+                            </ul>
+                        </div>
+                        <!--<div class="business-hours">-->
+
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                    <div class="contact-block">
+
+                        <h4 id="course____"></h4>
+
+<form id="contactform">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Name</label>
+
+                                        <input type="text" class="form-control" id="name" name="name"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" id="email" class="form-control"
+                                               name="email" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>How Did You Find Us?</label>
+                                        <select class="form-control" name="find" id="find">
+                                            <option value="Facebook">Facebook</option>
+                                            <option value="Instagram">Instagram</option>
+                                            <option value="Twitter">Twitter</option>
+                                            <option value="Newspaper">Newspaper</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Your Message</label>
+                                        <textarea class="form-control" name="message" id="message"
+                                                  required></textarea>
+                                    </div>
+                                    <div class="submit-button text-center">
+                                        <button class="btn btn-common" id="submit" type="submit">Send Message</button>
+                                        <!--<div id="msgSubmit" class="h3 text-center hidden"></div>-->
+                                        <!--<div class="clearfix"></div>-->
+                                    </div>
+                                     <div class="social-icons">
+                        </div>
+                                </div>
+                            </div>
+                        </form>
+                        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                        <script>
+                        $("#contactform").on("submit", function (e) {
+                            e.preventDefault();
+
+
+                              $.ajax({
+                               type: "POST",
+                                url: 'Contact_us_save',
+                                data:  $('#contactform').serialize(),
+                                success: function (data) {
+                                <!--alert(data);-->
+                                  $("#course____").html(data);
+                                  document.getElementById("contactform").reset();
+
+                                }
+                              });
+
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'footer.html' %}
