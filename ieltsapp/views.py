@@ -124,9 +124,9 @@ class Student_Sign_Up(SuccessMessageMixin,CreateView):
             subject, from_email, to = "Welcome To Tajinder's English Classes", settings.DEFAULT_FROM_EMAIL, to_email
             text_content = plaintext.render(d)
             html_content = htmly.render(d)
-            msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-            msg.attach_alternative(html_content, "text/html")
-            #msg.send()
+            # msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+            # msg.attach_alternative(html_content, "text/html")
+            # msg.send()
             if redirect_to != '':
                 return redirect(redirect_to)
             else:
@@ -184,7 +184,8 @@ def index(request):
     course_list = Course_Db.objects.all().order_by('-id')[:6]
     return render(request , 'index.html',locals())
 
-
+def policy(request):
+    return render(request , 'policy.html',locals())
 
 
 def blog(request):
@@ -241,8 +242,8 @@ def paymentstatus(request,pair):
     subject, from_email, to = "Welcome To Tajinder's English Classes Payment Successfully !", settings.DEFAULT_FROM_EMAIL, email
     text_content = plaintext.render(d)
     html_content = htmly.render(d)
-    msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-    msg.attach_alternative(html_content, "text/html")
+    # msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+    # msg.attach_alternative(html_content, "text/html")
     #msg.send()
 
 
@@ -391,8 +392,8 @@ class Sign_Up(SuccessMessageMixin,CreateView):
             subject, from_email, to = "Welcome To Tajinder's English Classes", settings.DEFAULT_FROM_EMAIL, to_email
             text_content = plaintext.render(d)
             html_content = htmly.render(d)
-            msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-            msg.attach_alternative(html_content, "text/html")
+            # msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+            # msg.attach_alternative(html_content, "text/html")
             #msg.send()
             return render(request, 'account-verify.html', locals())
         return render(request, self.template_name, locals())
@@ -416,10 +417,10 @@ class Contact_us_save(View):
             subject, from_email, to = "Welcome To Tajinder's English Classes. Thank you for Contact us", settings.DEFAULT_FROM_EMAIL, email
             text_content = plaintext.render(d)
             html_content = htmly.render(d)
-            msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-            msg.attach_alternative(html_content, "text/html")
+            # msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+            # msg.attach_alternative(html_content, "text/html")
             #msg.send()
-            messages.success(request, "Thank you for Contact us")
+            # messages.success(request, "Thank you for Contact us")
             return render(request, self.template_name, locals())
         messages.success(request, "Something went wrong")
         return render(request,self.template_name,locals())
@@ -434,8 +435,8 @@ def register_send_mails(emails):
     subject, from_email, to = "Welcome To Tajinder's English Classes", settings.DEFAULT_FROM_EMAIL, emails
     text_content = plaintext.render(d)
     html_content = htmly.render(d)
-    msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-    msg.attach_alternative(html_content, "text/html")
+    # msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+    # msg.attach_alternative(html_content, "text/html")
     #msg.send()
 
 

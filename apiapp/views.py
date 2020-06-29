@@ -103,9 +103,9 @@ class Singup(CreateAPIView):
         subject, from_email, to = "Welcome To Tajinder's English Classes", settings.DEFAULT_FROM_EMAIL, user.email
         text_content = plaintext.render(d)
         html_content = htmly.render(d)
-        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-        msg.attach_alternative(html_content, "text/html")
-        msg.send()
+        #msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        #msg.attach_alternative(html_content, "text/html")
+        #msg.send()
         return user
 
 from django.contrib.sessions.models import Session
